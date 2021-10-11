@@ -34,10 +34,10 @@ $('#country').change(function() {
 $('#chkbx').change(
     function() {
         if ($(this).is(':checked')){
-            $("#msgbox").prop('disabled', false)
+            $("#msgbox").prop('readonly', false)
             $('#msgbox').css("border-color", "rgb(255, 0, 0)")
         }else{
-            $("#msgbox").prop('disabled', true)
+            $("#msgbox").prop('readonly', true)
             $('#msgbox').css("border-color", "")
         } 
         $("#msgbox").val('')
@@ -55,7 +55,7 @@ $('.submit').on('click', function() {
             showurl = "https://wa.me/" + ext + phone
         }
         wpurl = "https://api.whatsapp.com/send?phone=" + tail
-        $("#msgbox").prop('disabled', true)
+        $("#msgbox").prop('readonly', true)
         $('#msgbox').css("border-color", "")
         $("#msgbox").val("Your Shareable URL is : "+ showurl)
         $("#chkbx").prop("checked", false)
