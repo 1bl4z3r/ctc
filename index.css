@@ -60,7 +60,6 @@ input[type=number] {
   position: absolute;
   top: 0;
   right: 8vw;
-  display: none;
 }
 .submit{
     width: 80vw;
