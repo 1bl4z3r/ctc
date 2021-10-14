@@ -69,7 +69,7 @@ $('.submit').on('click', function() {
 });
 $('#cpl').on('click',function(){
     if (navigator.clipboard.writeText)
-        await navigator.clipboard.writeText(showurl)
+        navigator.clipboard.writeText(showurl)
     else
         alert("Clipboard API is not supported")
 });
