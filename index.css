@@ -42,13 +42,22 @@ input[type=number] {
     padding: 10px;
     margin: 10px;
 }
-#msgbox{
+.textarea-container {
+  position: relative;
+}
+
+.textarea-container #msgbox{
     width: 80vw;
     padding: 10px;
     outline: none;
     font-size: 16px;
     border-style: solid;
     border-width: 0 0 2px 0;
+}
+.textarea-container #cpl {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .submit{
     width: 80vw;
