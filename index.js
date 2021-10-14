@@ -1,3 +1,4 @@
+var showurl;
 $(function() {
     $(':input[type="number"]').on('input change', function() {
         if($("#phone").val().length >= 10)
@@ -33,6 +34,8 @@ $('#country').change(function() {
 })
 $('#chkbx').change(
     function() {
+        if(('#cpl').css('display') != 'none')
+            ('#cpl').css('display','none')
         if ($(this).is(':checked')){
             $("#msgbox").prop('readonly', false)
             $('#msgbox').css("border-color", "rgb(255, 0, 0)")
@@ -57,9 +60,16 @@ $('.submit').on('click', function() {
         wpurl = "https://api.whatsapp.com/send?phone=" + tail
         $("#msgbox").prop('readonly', true)
         $('#msgbox').css("border-color", "")
-        $("#msgbox").val("Your Shareable URL is : "+ showurl)
+        $("#msgbox").val("\n\nYour Shareable URL is : "+ showurl)
+        $("#cpl").css("display","")
         $("#chkbx").prop("checked", false)
         if (window.confirm('Redirect to WhatsApp?'))
             window.open(wpurl, '_blank')
     }
+});
+$('#cpl').on('click',function(){
+    if (navigator.clipboard.writeText)
+        await navigator.clipboard.writeText(showurl)
+    else
+        alert("Clipboard API is not supported")
 });
