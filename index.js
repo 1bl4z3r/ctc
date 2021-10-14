@@ -61,8 +61,8 @@ $('.submit').on('click', function() {
         $("#msgbox").prop('readonly', true)
         $('#msgbox').css("border-color", "")
         $("#msgbox").val("\n\nYour Shareable URL is : "+ showurl)
-        $("#cpl").css("display","")
         $("#chkbx").prop("checked", false)
+        $("#cpl").css("display","")
         if (window.confirm('Redirect to WhatsApp?'))
             window.open(wpurl, '_blank')
     }
