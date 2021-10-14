@@ -34,8 +34,8 @@ $('#country').change(function() {
 })
 $('#chkbx').change(
     function() {
-        if(('#cpl').hasClass('cls-show')){
-        $('#cpl').removeClass('.cls-show')
+        if(!(('#cpl').disable)){
+        $('#cpl').prop("disabled", true);
         colsole.log("Change")}
         if ($(this).is(':checked')){
             $("#msgbox").prop('readonly', false)
@@ -63,7 +63,7 @@ $('.submit').on('click', function() {
         $('#msgbox').css("border-color", "")
         $("#msgbox").val("\n\nYour Shareable URL is : "+ showurl)
         $("#chkbx").prop("checked", false)
-        $('#cpl').addClass('.cls-show')
+        $('#cpl').prop("disabled", false)
         if (window.confirm('Redirect to WhatsApp?'))
             window.open(wpurl, '_blank')
     }
