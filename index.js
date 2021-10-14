@@ -36,7 +36,7 @@ $('#chkbx').change(
     function() {
         if(!(('#cpl').disable)){
         $('#cpl').prop("disabled", true);
-        colsole.log("Change")}
+        console.log("Change")}
         if ($(this).is(':checked')){
             $("#msgbox").prop('readonly', false)
             $('#msgbox').css("border-color", "rgb(255, 0, 0)")
