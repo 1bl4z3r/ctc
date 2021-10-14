@@ -34,7 +34,7 @@ $('#country').change(function() {
 })
 $('#chkbx').change(
     function() {
-        if(('#cpl').hasClass('cls-show'){
+        if(('#cpl').hasClass('cls-show')){
         $('#cpl').removeClass('.cls-show')
         colsole.log("Change")}
         if ($(this).is(':checked')){
