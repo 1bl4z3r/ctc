@@ -45,7 +45,9 @@ input[type=number] {
 .textarea-container {
   position: relative;
 }
-
+.cls-show{
+  display: block !important;
+}
 .textarea-container #msgbox{
     width: 80vw;
     padding: 10px;
