@@ -7,3 +7,8 @@ I have absolutely no idea. I had a previous version of this very thing which use
 
 # Is this Open Source?
 This is GitHub, so duh. Code is under GNU General Public License v3.0
+
+# URL
+
+1. https://click2cha.tk (Highly debatable if this will work)
+2. https://1bl4z3r.github.io/ctc (This will definitely work)
