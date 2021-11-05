@@ -90,7 +90,7 @@ footer{
     right: 0;
 }
 @media (prefers-color-scheme: dark) {
-    body{
+    html{
         background-color: #000000;
         color: rgb(156, 156, 156);
     }
