@@ -100,7 +100,7 @@ window.addEventListener("load", (e1) => {
     }
   });
   dropdown.addEventListener("change", dropdownSelect);
-  telgrm.addEventListener("click", () => {setTimeout(handleLink,1000),'t'},false);
-  signal.addEventListener("click", () => {setTimeout(handleLink,1000),'s'},false);
-  whtspp.addEventListener("click", () => {setTimeout(handleLink,1000),'w'},false);
+  telgrm.addEventListener("click", () => {setTimeout(handleLink,1000,'t')},false);
+  signal.addEventListener("click", () => {setTimeout(handleLink,1000,'s')},false);
+  whtspp.addEventListener("click", () => {setTimeout(handleLink,1000,'w')},false);
 });
