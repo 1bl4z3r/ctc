@@ -62,6 +62,11 @@ function handleLink(s){
     errorp.innerHTML = "Phone number received is less than 8 characters, which is invalid";
     errord.classList.remove("hide");
   }
+    else if(dropdown.options[dropdown.selectedIndex].text === "----Select your country----"){
+      errorh.innerHTML = "INVALID PHONE NUMBER";
+      errorp.innerHTML = "Phone number received has no country code. Enter a valid country code";
+      errord.classList.remove("hide");
+    }
   else{
     let ph = '+'+textbox.value.match(/\d/g).join("");
     if (s === 'w'){
