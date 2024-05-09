@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="index.css" media="print" onload="this.media='all'">
+      <noscript><link rel="preload" href="index.css" as="style"></noscript>
 
     <link rel="icon" type="image/svg+xml" href="identity/favicon.svg">
     <link rel="icon" type="image/png" href="identity/favicon.png">
@@ -22,12 +23,6 @@
     <meta name="msapplication-TileColor" content="#0741ad">
     <meta name="msapplication-config" content="identity/browserconfig.xml">
     <meta name="theme-color" content="#0741ad">
-
-
-
-    <noscript>
-        <link rel="stylesheet" href="index.css">
-    </noscript>
     <title>ClickToChat</title>
 </head>
 
