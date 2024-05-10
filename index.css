@@ -9,6 +9,10 @@
     --desktopfont: 25px;
     --darkhovercolor: white;
     --lghthovercolor: #2e2e2e;
+    --mobilepadding: 50px;
+    --tabletpadding: 10vw;
+    --desktoppadding: 15vw;
+
 }
 
 body,
@@ -36,10 +40,13 @@ input[type=number] {
 
 select,
 input {
-    background-color: #000;
-    color: #676767;
+    /* background-color: #000; */
+    background-color: transparent;
+    /* color: #676767; */
+    color: #fff;
     border: 1px solid #373737;
     border-radius: 5px;
+    font-size: var(--mobilefont);
 }
 
 select:focus,
@@ -50,13 +57,15 @@ input:focus-visible {
     border: 1px solid #c06300;
     outline: none;
 }
-.jsbanner{
+
+.jsbanner {
     margin: 0;
     background-color: rgb(210, 30, 30);
     border: 3px solid #ff5050;
     padding: 10px;
 }
-.jsbanner > a{
+
+.jsbanner>a {
     text-decoration: none;
 }
 
@@ -70,16 +79,18 @@ input:focus-visible {
     background: -webkit-linear-gradient(45deg, hsla(30, 78%, 47%, 1) 0%, hsla(326, 52%, 44%, 1) 100%);
 
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D4781A", endColorstr="#AA3678", GradientType=1);
-    height: calc(1.5vw + 15%);
+    /* height: calc(1.5vw + 15%); */
+    height: fit-content;
 }
 
 .topbarp {
     margin: auto;
-    position: absolute;
+    /* position: absolute; */
     text-align: justify;
-    top: 2%;
-    left: 35%;
-    transform: translate(-35%, -2%);
+    /* top: 2%; */
+    /* left: 35%; */
+    /* transform: translate(-35%, -2%); */
+    padding: 25px var(--mobilepadding);
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 3.5vw;
     font-weight: 700;
@@ -166,6 +177,11 @@ input:focus-visible {
     margin-right: 10px;
 }
 
+.drop-text>div>svg {
+    width: 24px;
+    height: 15px;
+}
+
 .error {
     padding: 15px 5px 15px 5px;
     border-top: 5px dashed var(--errorborder);
@@ -204,6 +220,7 @@ input:focus-visible {
     width: var(--mobilefont);
     height: var(--mobilefont);
 }
+
 .footer {
     position: fixed;
     left: 0;
@@ -212,23 +229,33 @@ input:focus-visible {
     background-color: #343434;
     color: #dddddd;
     text-align: center;
- }
- .footer svg{
+}
+
+.footer svg {
     width: 14px;
     height: 14px;
     fill: #dddddd;
- }
- .footer a{
-    color: #009900;
+}
+
+.footer a {
+    color: #dddddd;
     text-decoration: none;
- }
+}
+
+.footer a:hover,
+a:focus {
+    color: rgba(21, 255, 0, 0.55);
+}
+
 @media only screen and (min-width: 600px) {
-    .topbar {
-        height: calc(1.5vw + 12%);
+    .topbarp {
+        padding: 25px var(--tabletpadding);
+        font-size: 2.5vw;
     }
 
-    .topbarp {
-        font-size: 2.5vw;
+    select,
+    input {
+        font-size: var(--tabletfont);
     }
 
     .drop-text {
@@ -247,16 +274,23 @@ input:focus-visible {
 }
 
 @media only screen and (min-width: 850px) {
-    .topbar {
-        height: calc(2.5vw + 20%);
-    }
-
     .topbarp {
+        padding: 25px var(--desktoppadding);
         font-size: 2.5vw;
     }
 
-    .drop-text {
+    select,
+    input {
         font-size: var(--desktopfont);
+    }
+
+    .drop-text {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0px 5px;
+        font-size: var(--desktopfont);
+        margin: 20px 0;
     }
 
     .btn {
@@ -296,12 +330,14 @@ input:focus-visible {
     .btn:hover,
     .btn:focus {
         color: var(--lghthovercolor);
-    }    
-    .footer{
+    }
+
+    .footer {
         color: #000;
         background-color: #fff;
     }
-    .footer svg{
+
+    .footer svg {
         fill: #222222;
     }
 }
