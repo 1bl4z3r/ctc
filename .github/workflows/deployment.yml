@@ -13,16 +13,27 @@ jobs:
       prepo: ${{github.repository}}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
-      # - name: Set up Minify Actions
-      #   uses: amireshoon/minifyAction@main
-      #   with:
-      #     repo: $prepo
-      # - name: Minifying Codes
-      #   run: |
-      #     minifier.sh $prepo
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/checkout
+      - name: Set up Minify Actions
+        uses: amireshoon/minifyAction@main
+        with:
+          repo: $prepo
+      - name: Minifying Codes
+        run: |
+          minifier.sh $prepo
+      - name: Pushing to production branch
+        uses: actions-js/push
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          # directory: github/workspace
+          branch: gh-pages
+          message: Minified css, js and html
+          author_name: 1bl4z3r
+          author_email: 34515568+1bl4z3r@users.noreply.github.com
+          force: true
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     full_commit_message: ${{ github.event.head_commit.message }}
+      #     publish_dir: ./public
