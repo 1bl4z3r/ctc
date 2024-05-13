@@ -21,10 +21,11 @@ jobs:
       - name: Minifying Codes
         run: |
           minifier.sh $prepo
-      - name: Pushing to production branch
+      - name: Pushing to gh-pages branch
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: github/workspace
           branch: gh-pages
           message: Minified css, js and html
           author_name: 1bl4z3r
