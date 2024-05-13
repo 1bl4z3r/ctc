@@ -9,18 +9,12 @@ jobs:
   deploy-static-files:
     name: Deploy Static page to GitHub Pages
     runs-on: ubuntu-latest
-    env:
-      prepo: ${{github.repository}}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      - name: Set up Minify Actions
-        uses: amireshoon/minifyAction@main
-        with:
-          repo: $prepo
-      - name: Minifying Codes
-        run: |
-          minifier.sh $prepo
+      - name: HTML/CSS/JS Minifier
+        uses: docker://devatherock/minify-js:3.1.0
+        add_suffix: false
       - name: Pushing to gh-pages branch
         uses: actions-js/push@master
         with:
