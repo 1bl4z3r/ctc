@@ -25,7 +25,7 @@ jobs:
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # directory: github/workspace
+          directory: ./public
           branch: gh-pages
           message: Minified css, js and html
           author_name: 1bl4z3r
