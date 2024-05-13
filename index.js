@@ -1,12 +1,12 @@
-let textbox = document.getElementById('phoneno');
-let dropdown = document.getElementById('dropdown');
-let whtspp = document.getElementById('whatsapp');
-let telgrm = document.getElementById('telegram');
-let signal = document.getElementById('signal');
-let errord = document.getElementById('error');
-let errorh = document.getElementById('error-h4');
-let errorp = document.getElementById('error-body');
-let pasteph = document.getElementById('pasteph');
+let textbox = document.getElementById("phoneno");
+let dropdown = document.getElementById("dropdown");
+let whtspp = document.getElementById("whatsapp");
+let telgrm = document.getElementById("telegram");
+let signal = document.getElementById("signal");
+let errord = document.getElementById("error");
+let errorh = document.getElementById("error-h4");
+let errorp = document.getElementById("error-body");
+let pasteph = document.getElementById("pasteph");
 const pattern = /^\d{6,15}$/;
 let countryCodeList = [];
 
@@ -14,7 +14,7 @@ function extFinder(extNum) {
   if (extNum.match(/\d/g) === null) {
     return;
   }
-  extNum = '+' + extNum.match(/\d/g).join("");
+  extNum = "+" + extNum.match(/\d/g).join("");
   let selectIndex = 0;
   let index = (extNum < 5) ? 5 : extNum.length;
   for (index; index >= 2; index--) {
@@ -40,8 +40,8 @@ function dropdownMake() {
       var CountryCodes = JSON.parse(JSON.stringify(data))
       let text = "<option id='no-option' value=''>----Select your country----</option>"
       for (let index in CountryCodes) {
-        text += "<option id=" + CountryCodes[index].country.replace(/\s+/g, '-').toLowerCase() + " value=" + CountryCodes[index].code.replace('-', '') + ">" + CountryCodes[index].country + "</option>";
-        countryCodeList.push(CountryCodes[index].code.replace('-', ''))
+        text += "<option id=" + CountryCodes[index].country.replace(/\s+/g, "-").toLowerCase() + " value=" + CountryCodes[index].code.replace("-", "") + ">" + CountryCodes[index].country + "</option>";
+        countryCodeList.push(CountryCodes[index].code.replace("-", ""))
       }
       dropdown.innerHTML = text;
       document.getElementById("loader").style.display = "none";
@@ -49,11 +49,11 @@ function dropdownMake() {
 }
 function dropdownSelect() {
   var value = dropdown.value;
-  textbox.value = (value === '') ? '' : value.slice(1);
+  textbox.value = (value === "") ? "" : value.slice(1);
 }
 function handleLink(s) {
   errord.classList.add("hide");
-  if (textbox.value === '') {
+  if (textbox.value === "") {
     errorh.innerHTML = "EMPTY FIELD";
     errorp.innerHTML = "No phone number was entered. Please enter one";
     errord.classList.remove("hide");
@@ -69,20 +69,20 @@ function handleLink(s) {
     errord.classList.remove("hide");
   }
   else {
-    let ph = '+' + textbox.value.match(/\d/g).join("");
-    if (s === 'w') {
-      if (window.confirm('Redirect to WhatsApp?')) {
-        window.open('https://wa.me/' + ph, '_blank', 'noopener');
+    let ph = "+" + textbox.value.match(/\d/g).join("");
+    if (s === "w") {
+      if (window.confirm("Redirect to WhatsApp?")) {
+        window.open("https://wa.me/" + ph, "_blank", "noopener");
       }
     }
-    else if (s === 't') {
-      if (window.confirm('Redirect to Telegram?')) {
-        window.open('https://t.me/' + ph, '_blank', 'noopener');
+    else if (s === "t") {
+      if (window.confirm("Redirect to Telegram?")) {
+        window.open("https://t.me/" + ph, "_blank", "noopener");
       }
     }
-    else if (s === 's') {
-      if (window.confirm('Redirect to Signal?')) {
-        window.open('https://signal.me/#p/' + ph, '_blank', 'noopener');
+    else if (s === "s") {
+      if (window.confirm("Redirect to Signal?")) {
+        window.open("https://signal.me/#p/" + ph, "_blank", "noopener");
       }
     }
     else { console.log("NONE") }
@@ -107,7 +107,7 @@ window.addEventListener("load", (e1) => {
   textbox.addEventListener("input", (e3) => {
     e3.preventDefault();
     errord.classList.add("hide");
-    if ((textbox.value !== '') && (textbox.value.match(/\d/g).join("").length > 2) && (textbox.value.match(/\d/g).join("").length < 15)) {
+    if ((textbox.value !== "") && (textbox.value.match(/\d/g).join("").length > 2) && (textbox.value.match(/\d/g).join("").length < 15)) {
       console.log(textbox.value.substring(0, 6))
       extFinder(textbox.value);
     }
@@ -116,7 +116,7 @@ window.addEventListener("load", (e1) => {
     }
   });
   dropdown.addEventListener("change", dropdownSelect);
-  telgrm.addEventListener("click", () => { setTimeout(handleLink, 1000, 't') }, false);
-  signal.addEventListener("click", () => { setTimeout(handleLink, 1000, 's') }, false);
-  whtspp.addEventListener("click", () => { setTimeout(handleLink, 1000, 'w') }, false);
+  telgrm.addEventListener("click", () => { setTimeout(handleLink, 1000, "t") }, false);
+  signal.addEventListener("click", () => { setTimeout(handleLink, 1000, "s") }, false);
+  whtspp.addEventListener("click", () => { setTimeout(handleLink, 1000, "w") }, false);
 });
