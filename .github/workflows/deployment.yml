@@ -6,22 +6,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  name: Deploy Static page to GitHub Pages
-  runs-on: ubuntu-latest
-  env:
-    prepo: ${{github.repository}}
-  steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-    - name: Set up Minify Actions
-      uses: amireshoon/minifyAction@main
-      with:
-        repo: $prepo
-    - name: Minifying Codes
-      run: |
-        minifier.sh $prepo
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+  deploy-static-files:
+    name: Deploy Static page to GitHub Pages
+    runs-on: ubuntu-latest
+    env:
+      prepo: ${{github.repository}}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Minify Actions
+        uses: amireshoon/minifyAction@main
+        with:
+          repo: $prepo
+      - name: Minifying Codes
+        run: |
+          minifier.sh $prepo
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
