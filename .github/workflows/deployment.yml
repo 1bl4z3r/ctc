@@ -13,7 +13,7 @@ jobs:
       prepo: ${{github.repository}}
     steps:
       - name: Checkout repo
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Set up Minify Actions
         uses: amireshoon/minifyAction@main
         with:
@@ -22,7 +22,7 @@ jobs:
         run: |
           minifier.sh $prepo
       - name: Pushing to production branch
-        uses: actions-js/push
+        uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # directory: github/workspace
