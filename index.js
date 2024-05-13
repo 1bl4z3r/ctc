@@ -97,7 +97,7 @@ window.addEventListener("load", (e1) => {
     textbox.value = paste.match(/\d/g).join("");
     extFinder(paste);
   });
-  pasteph.addEventListener('click', async function (e3) {
+  pasteph.addEventListener("click", async function (e3) {
     e3.preventDefault();
     errord.classList.add("hide");
     let clipboardRead = await navigator.clipboard.readText();
@@ -111,7 +111,7 @@ window.addEventListener("load", (e1) => {
       console.log(textbox.value.substring(0, 6))
       extFinder(textbox.value);
     }
-    else if (textbox.value === '') {
+    else if (textbox.value === "") {
       dropdown.selectedIndex = 0;
     }
   });
