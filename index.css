@@ -40,9 +40,7 @@ input[type=number] {
 
 select,
 input {
-    /* background-color: #000; */
     background-color: transparent;
-    /* color: #676767; */
     color: #fff;
     border: 1px solid #373737;
     border-radius: 5px;
@@ -79,41 +77,26 @@ input:focus-visible {
     background: -webkit-linear-gradient(45deg, hsla(30, 78%, 47%, 1) 0%, hsla(326, 52%, 44%, 1) 100%);
 
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D4781A", endColorstr="#AA3678", GradientType=1);
-    /* height: calc(1.5vw + 15%); */
     height: fit-content;
 }
 
 .topbarp {
     margin: auto;
-    /* position: absolute; */
     text-align: justify;
-    /* top: 2%; */
-    /* left: 35%; */
-    /* transform: translate(-35%, -2%); */
     padding: 25px var(--mobilepadding);
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 3.5vw;
     font-weight: 700;
-
-    .click {
-        background: #C9DEF4;
-        background: linear-gradient(to right, #C9DEF4 0%, #F5CCD4 50%, #B8A4C9 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
+}
+.click {
+    background: #C9DEF4;
+    background: linear-gradient(to right, #C9DEF4 0%, #F5CCD4 50%, #B8A4C9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-ul {
-    align-items: center;
-    justify-items: center;
-    display: grid;
-    padding-left: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
-}
-.radio-select>ul {
+.radio-select > ul {
     align-items: center;
     justify-items: center;
     display: grid;

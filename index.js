@@ -44,7 +44,9 @@ function dropdownMake() {
         countryCodeList.push(CountryCodes[index].code.replace("-", ""))
       }
       dropdown.innerHTML = text;
-      document.getElementById("loader").style.display = "none";
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+      }, 1000);
     });
 }
 function dropdownSelect() {
