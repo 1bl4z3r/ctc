@@ -105,7 +105,14 @@ input:focus-visible {
 
 }
 
-
+ul {
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    padding-left: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
 .radio-select>ul {
     align-items: center;
     justify-items: center;
