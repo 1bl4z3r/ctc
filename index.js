@@ -7,8 +7,9 @@ let errord = document.getElementById("error");
 let errorh = document.getElementById("error-h4");
 let errorp = document.getElementById("error-body");
 let pasteph = document.getElementById("pasteph");
-const pattern = /^\d{6,15}$/;
 let countryCodeList = [];
+const pattern = /^\d{6,15}$/;
+const regexp = /android|iphone|kindle|ipad/i;
 
 function extFinder(extNum) {
   if (extNum.match(/\d/g) === null) {
@@ -71,20 +72,34 @@ function handleLink(s) {
     errord.classList.remove("hide");
   }
   else {
-    let ph = "+" + textbox.value.match(/\d/g).join("");
+    let ph1 = textbox.value.match(/\d/g).join("");
+    let ph2 = "+" + ph1
     if (s === "w") {
       if (window.confirm("Redirect to WhatsApp?")) {
-        window.open("https://wa.me/" + ph, "_blank", "noopener");
+        if (regexp.test(navigator.userAgent)) {
+          window.open("https://api.whatsapp.com/send/?phone=" + ph1, "_blank", "noopener");
+        }
+        window.open("https://wa.me/" + ph2, "_blank", "noopener");
       }
     }
     else if (s === "t") {
       if (window.confirm("Redirect to Telegram?")) {
-        window.open("https://t.me/" + ph, "_blank", "noopener");
+        if (regexp.test(navigator.userAgent)) {
+          window.open("tg:resolve?phone=" + ph1, "_blank", "noopener");
+        }
+        else{
+          window.open("https://t.me/" + ph2, "_blank", "noopener");
+        }
       }
     }
     else if (s === "s") {
       if (window.confirm("Redirect to Signal?")) {
-        window.open("https://signal.me/#p/" + ph, "_blank", "noopener");
+        if (regexp.test(navigator.userAgent)) {
+          window.open("sgnl://signal.me/#p/" + ph2, "_blank", "noopener");
+        }
+        else{
+        window.open("https://signal.me/#p/" + ph2, "_blank", "noopener");
+      }
       }
     }
     else { console.log("NONE") }
