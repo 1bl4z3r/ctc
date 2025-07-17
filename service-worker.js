@@ -4,27 +4,27 @@ const RUNTIME_CACHE = `runtime-cache-${CACHE_VERSION}`;
 
 // List all resources you want to precache here:
 const PRECACHE_URLS = [
-  '/',               // HTML shell
-  '/index.html',
-  '/offline.html',
-  '/index.css',
-  '/index.js',
-  '/CountryCodes.json',
-  '/site.webmanifest',
-  '/identity/browserconfig.xml',
-  '/identity/android-chrome-36x36.png',
-  '/identity/android-chrome-48x48.png',
-  '/identity/android-chrome-72x72.png',
-  '/identity/android-chrome-96x96.png',
-  '/identity/android-chrome-144x144.png',
-  '/identity/android-chrome-192x192.png',
-  '/identity/android-chrome-256x256.png',
-  '/identity/android-chrome-512x512.png',
-  '/identity/maskable-icon-512x512.png',
-  '/identity/apple-touch-icon.png',
-  '/identity/favicon-32x32.png',
-  '/identity/favicon-16x16.png',
-  '/identity/mstile-150x150.png'
+  '/ctc/',
+  '/ctc/index.html',
+  '/ctc/offline.html',
+  '/ctc/index.css',
+  '/ctc/index.js',
+  '/ctc/CountryCodes.json',
+  '/ctc/site.webmanifest',
+  '/ctc/identity/browserconfig.xml',
+  '/ctc/identity/android-chrome-36x36.png',
+  '/ctc/identity/android-chrome-48x48.png',
+  '/ctc/identity/android-chrome-72x72.png',
+  '/ctc/identity/android-chrome-96x96.png',
+  '/ctc/identity/android-chrome-144x144.png',
+  '/ctc/identity/android-chrome-192x192.png',
+  '/ctc/identity/android-chrome-256x256.png',
+  '/ctc/identity/android-chrome-512x512.png',
+  '/ctc/identity/maskable-icon-512x512.png',
+  '/ctc/identity/apple-touch-icon.png',
+  '/ctc/identity/favicon-32x32.png',
+  '/ctc/identity/favicon-16x16.png',
+  '/ctc/identity/mstile-150x150.png'
 ];
 
 // Install: cache the application shell
@@ -58,7 +58,7 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
   // 1) Navigation requests → App Shell (index.html) or offline.html
-  if (event.request.mode === 'navigate') {
+  if (event.request.mode === 'navigate' && url.origin === location.origin) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
@@ -68,7 +68,10 @@ self.addEventListener('fetch', event => {
             return response;
           });
         })
-        .catch(() => caches.match('/offline.html'))
+        .catch(() => {
+          console.log("nav offline")
+          return caches.match('/ctc/offline.html')
+        })
     );
     return;
   }
