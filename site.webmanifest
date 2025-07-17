@@ -1,8 +1,15 @@
 {
-    "name": "ClickToChat",
-    "short_name": "C2C",
-    "description": "Generate direct chat links for WhatsApp, Telegram, and Signal without saving contacts. A fast, offline-first Progressive Web App (PWA).",
-    "icons": [
+  "name": "ClickToChat",
+  "short_name": "C2C",
+  "description": "Generate direct chat links for WhatsApp, Telegram, and other contacts. Fast, offline-first PWA.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0741ad",
+  "theme_color": "#0741ad",
+  "icons": [
         {
             "src": "identity/android-chrome-36x36.png",
             "sizes": "36x36",
@@ -51,10 +58,7 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ],
-    "theme_color": "#0741ad",
-    "background_color": "#0741ad",
-    "start_url": ".",
-    "scope": ".",
-    "display": "standalone"
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }
