@@ -1,333 +1,180 @@
+/* Material-inspired minimal theme */
 :root {
-    --whatsapp: #25d366;
-    --telegram: #24A1DE;
-    --signal: #3A76F0;
-    --errorborder: #ff6550;
-    --errorbody: #ffbcbc;
-    --mobilefont: 15px;
-    --tabletfont: 20px;
-    --desktopfont: 25px;
-    --darkhovercolor: white;
-    --lghthovercolor: #2e2e2e;
-    --mobilepadding: 50px;
-    --tabletpadding: 10vw;
-    --desktoppadding: 15vw;
-
+  --primary: #0741ad;
+  --on-primary: #fff;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --on-surface: #e0e0e0;
+  --error: #b00020;
+  --spacing: 1rem;
+  --radius: 0.5rem;
 }
 
-body,
-html {
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    height: 100%;
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-
-
-select,
-input {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #373737;
-    border-radius: 5px;
-    font-size: var(--mobilefont);
-}
-
-select:focus,
-select:focus-visible,
-input:focus,
-input:focus-visible {
-    color: #fff;
-    border: 1px solid #c06300;
-    outline: none;
-}
-
-.jsbanner {
-    margin: 0;
-    background-color: rgb(210, 30, 30);
-    border: 3px solid #ff5050;
-    padding: 10px;
-}
-
-.jsbanner>a {
-    text-decoration: none;
-}
-
-.topbar {
-    background: hsla(30, 78%, 47%, 1);
-
-    background: linear-gradient(45deg, hsla(30, 78%, 47%, 1) 0%, hsla(326, 52%, 44%, 1) 100%);
-
-    background: -moz-linear-gradient(45deg, hsla(30, 78%, 47%, 1) 0%, hsla(326, 52%, 44%, 1) 100%);
-
-    background: -webkit-linear-gradient(45deg, hsla(30, 78%, 47%, 1) 0%, hsla(326, 52%, 44%, 1) 100%);
-
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D4781A", endColorstr="#AA3678", GradientType=1);
-    height: fit-content;
-}
-
-.topbarp {
-    margin: auto;
-    text-align: justify;
-    padding: 25px var(--mobilepadding);
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 3.5vw;
-    font-weight: 700;
-}
-.click {
-    background: #C9DEF4;
-    background: linear-gradient(to right, #C9DEF4 0%, #F5CCD4 50%, #B8A4C9 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.radio-select > ul {
-    align-items: center;
-    justify-items: center;
-    display: grid;
-    padding-left: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
-}
-
-.radio-select>ul>li {
-    list-style: none;
-    justify-self: center;
-    align-self: center;
-    width: 90%;
-}
-
-.radio-select>ul>li>button {
-    width: 90%;
-}
-
-.whatsapp {
-    color: var(--whatsapp);
-}
-
-.w>button {
-    border: solid var(--whatsapp) 2px;
-    background: linear-gradient(to right, var(--whatsapp) 50%, rgb(0, 0, 0, 0) 50%);
-    background-size: 260% 100%;
-    background-position: right bottom;
-}
-
-.telegram {
-    color: var(--telegram);
-}
-
-.t>button {
-    border: solid var(--telegram) 2px;
-    background: linear-gradient(to right, var(--telegram) 50%, rgb(0, 0, 0, 0) 50%);
-    background-size: 260% 100%;
-    background-position: right bottom;
-}
-
-.signal {
-    color: var(--signal);
-}
-
-.s>button {
-    border: solid var(--signal) 2px;
-    background: linear-gradient(to right, var(--signal) 50%, rgb(0, 0, 0, 0) 50%);
-    background-size: 260% 100%;
-    background-position: right bottom;
-}
-
-.drop-text {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1fr;
-    gap: 5px 0px;
-    font-size: var(--mobilefont);
-}
-
-.drop-text>div {
-    justify-self: center;
-    align-self: center;
-    padding: 15px 0 15px 0;
-}
-
-.drop-text>div>label {
-    margin-right: 10px;
-}
-
-.drop-text>div>svg {
-    width: 24px;
-    height: 15px;
-}
-
-.error {
-    padding: 15px 5px 15px 5px;
-    border-top: 5px dashed var(--errorborder);
-    border-right: 1px solid var(--errorborder);
-    border-bottom: 5px dashed var(--errorborder);
-    border-left: 1px solid var(--errorborder);
-}
-
-.hide {
-    display: none;
-}
-
-.btn {
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
-    font-family: Arial;
-    padding: 10px;
-    text-decoration: none;
-    transition: all .5s ease-out;
-}
-
-.btn::target-text {
-    transition: all .6s ease-out;
-}
-
-/* .btn:hover, .btn:active,  */
-.btn:hover,
-.btn:focus {
-    text-decoration: none;
-    background-position: left bottom;
-    color: var(--darkhovercolor);
-}
-
-.btn svg {
-    width: var(--mobilefont);
-    height: var(--mobilefont);
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #343434;
-    color: #dddddd;
-    text-align: center;
-}
-
-.footer svg {
-    width: 14px;
-    height: 14px;
-    fill: #dddddd;
-}
-
-.footer a {
-    color: #dddddd;
-    text-decoration: none;
-}
-
-.footer a:hover,
-a:focus {
-    color: rgba(21, 255, 0, 0.55);
-}
-
-@media only screen and (min-width: 600px) {
-    .topbarp {
-        padding: 25px var(--tabletpadding);
-        font-size: 2.5vw;
-    }
-
-    select,
-    input {
-        font-size: var(--tabletfont);
-    }
-
-    .drop-text {
-        font-size: var(--tabletfont);
-    }
-
-    .btn {
-        font-size: var(--tabletfont);
-    }
-
-    .btn svg {
-        width: var(--tabletfont);
-        height: var(--tabletfont);
-    }
-
-}
-
-@media only screen and (min-width: 850px) {
-    .topbarp {
-        padding: 25px var(--desktoppadding);
-        font-size: 2.5vw;
-    }
-
-    select,
-    input {
-        font-size: var(--desktopfont);
-    }
-
-    .drop-text {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        gap: 0px 5px;
-        font-size: var(--desktopfont);
-        margin: 20px 0;
-    }
-
-    .btn {
-        font-size: var(--desktopfont);
-    }
-
-    .btn svg {
-        width: var(--desktopfont);
-        height: var(--desktopfont);
-    }
-}
-
+/* Light theme overrides */
 @media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fafafa;
+    --surface: #fff;
+    --on-surface: #202020;
+  }
+}
 
-    body,
-    html {
-        background-color: #d7d7d7;
-        color: #2e2e2e;
-    }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Existing body styles */
+body {
+  font-family: Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--on-surface);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Remove overflow-y: scroll if you added it, or ensure it's not here for now */
+  /* overflow-y: auto; or remove entirely if not needed */
+}
 
-    select,
-    input {
-        background-color: #d6d6d6;
-        color: #2f2f2f;
-        border: 1px solid #373737;
-    }
+/* Spinner styles */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Light grey border */
+  border-top: 4px solid var(--on-primary); /* Primary color for the top border */
+  border-radius: 50%; /* Make it a circle */
+  width: 40px; /* Size of the spinner */
+  height: 40px; /* Size of the spinner */
+  animation: spin 1s linear infinite; /* Apply the spin animation */
+  margin-bottom: 10px; /* Space between spinner and 'Loading...' text */
+}
 
-    select:focus,
-    select:focus-visible,
-    input:focus,
-    input:focus-visible {
-        color: #000000;
-        border: 1px solid #37006b;
-        outline: none;
-    }
+/* Keyframe animation for spinning */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-    .btn:hover,
-    .btn:focus {
-        color: var(--lghthovercolor);
-    }
+/* Adjust loader to arrange spinner and text */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--on-surface);
+  display: flex;
+  flex-direction: column; /* Change to column to stack spinner and text */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
 
-    .footer {
-        color: #000;
-        background-color: #fff;
-    }
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
-    .footer svg {
-        fill: #222222;
-    }
+/* New wrapper for consistent centering */
+.content-wrapper {
+  flex: 1; /* Allow it to grow in the flex column */
+  max-width: 600px; /* Set the maximum width here */
+  margin: auto; /* Center it */
+  padding: var(--spacing); /* Apply padding here to avoid inner shifts */
+  width: 100%; /* Ensure it takes full available width up to max-width */
+}
+
+/* Adjust .container */
+.container {
+  /* Remove flex: 1, max-width, and margin: auto from here */
+  /* They are now handled by .content-wrapper */
+  padding: 0; /* Remove padding here as it's on the wrapper */
+  width: 100%; /* Ensure it fills the wrapper */
+}
+.topbar {
+  background: var(--primary);
+  color: var(--on-primary);
+  text-align: center;
+  padding: var(--spacing);
+}
+.drop-text {
+  display: grid;
+  gap: var(--spacing);
+  margin: var(--spacing) 0;
+}
+.drop-text .input-with-btn {
+  display: flex;
+  width: 100%;
+}
+.input-with-btn input {
+  flex: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-with-btn button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0 1rem;
+  margin: 0;
+}
+select, input {
+  width: 100%; padding: 0.75rem;
+  border: 1px solid var(--surface);
+  background: var(--surface);
+  color: var(--on-surface);
+}
+button, .btn {
+  cursor: pointer;
+  border: none;
+  padding: 0.75rem var(--spacing);
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
+button:hover {
+  opacity: 0.8;
+}
+.service-buttons {
+  display: flex;
+  gap: var(--spacing);
+  justify-content: center;
+  margin: var(--spacing) 0;
+}
+.service-btn {
+  flex: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.faq details {
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin-bottom: var(--spacing);
+}
+
+.faq summary {
+  list-style: none;       /* remove default marker */
+  cursor: pointer;
+  padding: var(--spacing);
+  position: relative;
+}
+
+.faq summary::after {
+  content: "▾";           /* down‑arrow */
+  position: absolute;
+  right: var(--spacing);
+  transition: transform 0.2s;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq details p {
+  padding: 0 var(--spacing) var(--spacing);
+  color: var(--on-surface);
+}
+
+.error { color: var(--error); }
+.footer {
+  text-align: center; padding: var(--spacing);
+  background: var(--surface);
+  color: var(--on-surface);
 }
